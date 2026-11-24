@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-title" content="Pace">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Pace Anzeige</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  body {
+    font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+    transition: background-color 0.25s ease;
+  }
+  #track {
+    position: fixed;
+    top: 0; bottom: 0; left: 0;
+    width: 400vw;
+    display: flex;
+    transition: transform 0.25s ease;
+  }
+  .page {
+    width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    --line: #222;
+    --label: #8a8a8a;
+  }
+  .p2 { --line: #48484c; --label: #a0a0a5; }
+  .p3 { --line: #68686e; --label: #b8b8be; }
+  .p4 { --line: #c8c8cc; --label: #6a6a6e; color: #000; }
+
+  .inner {
+    position: relative;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    min-width: 0;
+  }
+  .value {
+    font-size: min(31vw, 30vh);
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+  .unit {
+    margin-top: 1.2vh;
+    font-size: min(6vw, 5vh);
+    font-weight: 500;
+    color: var(--label);
+    letter-spacing: 0.04em;
+  }
+  .inner > section + section { border-top: 1px solid var(--line); }
+
+  /* Tausch-Knopf: kleiner Kreis auf der Trennlinie, mit größerer Tippfläche */
+  .swap {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 48px; height: 48px;
+    margin: -24px 0 0 -24px;
+    padding: 0;
+    border: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+  }
+  .swap::before {
+    content: "";
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--label);
+    background: var(--bg);
+    transition: transform 0.12s ease;
+  }
+  .swap:active::before { transform: scale(1.5); }
+
+  .swap.g01 { top: 25%; }
+  .swap.g23 { top: 75%; }
+  .swap.g02 { left: 25%; }
+  .swap.g13 { left: 75%; }
+
+  /* Seite 4: alle vier Werte im 2 x 2 Raster, Nachbarn per Punkt tauschbar */
+  .p4 .inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .p4 section { border: 0 solid var(--line); }
+  .p4 section:nth-child(odd) { border-right-width: 1px; }
+  .p4 section:nth-child(n+3) { border-top-width: 1px; }
+  .p4 .inner > section + section { border-top-color: var(--line); }
+  .p4 section:nth-child(2) { border-top-width: 0; }
+  .p4 .value { font-size: min(14vw, 24vh); }
+  .p4 .unit { font-size: min(4.2vw, 4vh); }
+
+  #dots {
+    position: fixed;
+    left: 0; right: 0;
+    bottom: calc(env(safe-area-inset-bottom) + 10px);
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    pointer-events: none;
+  }
+  #dots i {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.25;
+    transition: opacity 0.25s ease, background-color 0.25s ease;
+  }
+  #dots i.on { opacity: 0.9; }
+  body.light #dots i { background: #000; }
+</style>
+</head>
+<body>
+<div id="track">
+  <main class="page p1"><div class="inner">
+    <section><div class="value"></div><div class="unit"></div></section>
+    <section><div class="value"></div><div class="unit"></div></section>
+    <button class="swap" type="button" aria-label="Oben und unten tauschen"></button>
+  </div></main>
+  <main class="page p2"><div class="inner">
+    <section><div class="value"></div><div class="unit"></div></section>
+    <section><div class="value"></div><div class="unit"></div></section>
+    <button class="swap" type="button" aria-label="Oben und unten tauschen"></button>
+  </div></main>
+  <main class="page p3"><div class="inner">
+    <section><div class="value"></div><div class="unit"></div></section>
+    <section><div class="value"></div><div class="unit"></div></section>
+    <button class="swap" type="button" aria-label="Oben und unten tauschen"></button>
+  </div></main>
+  <main class="page p4"><div class="inner">
+    <section><div class="value"></div><div class="unit"></div></section>
+    <section><div class="value"></div><div class="unit"></div></section>
+    <section><div class="value"></div><div class="unit"></div></section>
+    <section><div class="value"></div><div class="unit"></div></section>
+    <button class="swap g01" type="button" data-a="0" data-b="1" aria-label="Obere Werte tauschen"></button>
+    <button class="swap g23" type="button" data-a="2" data-b="3" aria-label="Untere Werte tauschen"></button>
+    <button class="swap g02" type="button" data-a="0" data-b="2" aria-label="Linke Werte tauschen"></button>
+    <button class="swap g13" type="button" data-a="1" data-b="3" aria-label="Rechte Werte tauschen"></button>
+  </div></main>
+</div>
+<div id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<script>
+(function () {
+  // Ein gemeinsamer Geschwindigkeitswert für alle Seiten. Gespeichert wird die Größe,
+  // die zuletzt verstellt wurde (unit) mit ihrem Rasterwert (v):
+  //   'kmh'    v = Zehntel km/h      'mph'     v = Zehntel mph
+  //   'pace'   v = Sekunden je km    'pacemi'  v = Sekunden je Meile
+  // Alle anderen Anzeigen werden daraus berechnet und gerundet.
+  var KM_PER_MILE = 1.609344;
+  var KMH_MIN = 10, KMH_MAX = 300;                    // 1,0 bis 30,0 km/h
+  var STEP = { kmh: 1, pace: 10, mph: 1, pacemi: 10 };   // 0,1 km/h, 10 s, 0,1 mph, 10 s
+  var LABEL = { kmh: 'km/h', pace: 'min/km', mph: 'mph', pacemi: 'min/mi' };
+  var LIMITS = {
+    kmh:    [KMH_MIN, KMH_MAX],
+    pace:   [120, 3600],                              // 2:00 bis 60:00 min/km
+    mph:    [Math.ceil(KMH_MIN / KM_PER_MILE), Math.floor(KMH_MAX / KM_PER_MILE)],
+    pacemi: [Math.ceil(120 * KM_PER_MILE / 10) * 10, Math.floor(3600 * KM_PER_MILE / 10) * 10]
+  };
+  // Seiten 1 bis 3: [obere Größe, untere Größe], verstellbar und tauschbar.
+  // Seite 4: Übersicht, zeilenweise von links nach rechts. Werte nicht verstellbar,
+  // aber benachbarte Felder lassen sich tauschen (Reihenfolge in state.grid).
+  var PAGES = [
+    { units: ['pace', 'kmh'],    bg: '#000000', edit: true },
+    { units: ['kmh', 'mph'],     bg: '#232326', edit: true },
+    { units: ['pace', 'pacemi'], bg: '#3c3c41', edit: true },
+    { units: ['pace', 'pacemi', 'kmh', 'mph'], bg: '#ffffff', edit: false, light: true }
+  ];
+  var KEY = 'pace-anzeige-state';
+  var SWIPE_PX = 30;
+
+  var GRID = PAGES.length - 1;
+  var state = { unit: 'kmh', v: 80, page: 1, swap: [false, false, false, false], grid: PAGES[GRID].units.slice() };
+  try {
+    var raw = JSON.parse(localStorage.getItem(KEY));
+    if (raw) {
+      var unit = raw.unit || (raw.mode === 'speed' ? 'kmh' : raw.mode);   // altes Format
+      if (LIMITS[unit] && raw.v >= LIMITS[unit][0] && raw.v <= LIMITS[unit][1]) {
+        state.unit = unit;
+        state.v = Math.round(raw.v);
+      }
+      if (raw.page >= 1 && raw.page <= PAGES.length) state.page = Math.round(raw.page);
+      if (raw.swap && raw.swap.length) {
+        for (var w = 0; w < PAGES.length; w++) state.swap[w] = PAGES[w].edit && raw.swap[w] === true;
+      }
+      // Reihenfolge auf Seite 4 nur übernehmen, wenn sie genau die vier Größen enthält
+      if (raw.grid && raw.grid.length === 4 && raw.grid.slice().sort().join() === PAGES[GRID].units.slice().sort().join()) {
+        state.grid = raw.grid.slice();
+      }
+    }
+  } catch (e) {}
+
+  // Exakte Geschwindigkeit in Zehntel km/h
+  function kmhTenths() {
+    switch (state.unit) {
+      case 'kmh':  return state.v;
+      case 'pace': return 36000 / state.v;
+      case 'mph':  return state.v * KM_PER_MILE;
+      default:     return 36000 * KM_PER_MILE / state.v;   // pacemi
+    }
+  }
+  // Exakter Wert einer Größe in ihrer Grundeinheit (Zehntel bzw. Sekunden)
+  function exact(unit) {
+    if (unit === state.unit) return state.v;
+    var k = kmhTenths();
+    switch (unit) {
+      case 'kmh':  return k;
+      case 'pace': return 36000 / k;
+      case 'mph':  return k / KM_PER_MILE;
+      default:     return 36000 * KM_PER_MILE / k;         // pacemi
+    }
+  }
+
+  function fmt(unit) {
+    var x = Math.round(exact(unit));
+    if (unit === 'pace' || unit === 'pacemi') {
+      var s = x % 60;
+      return Math.floor(x / 60) + ':' + (s < 10 ? '0' : '') + s;
+    }
+    return Math.floor(x / 10) + ',' + (x % 10);
+  }
+
+  // Größen einer Seite in Anzeigereihenfolge (Tausch berücksichtigt)
+  function unitsOf(i) {
+    if (i === GRID) return state.grid;
+    var u = PAGES[i].units;
+    return state.swap[i] ? [u[1], u[0]] : u;
+  }
+
+  var track = document.getElementById('track');
+  var pageEls = document.querySelectorAll('.page');
+  var dots = document.querySelectorAll('#dots i');
+  for (var i = 0; i < pageEls.length; i++) {
+    pageEls[i].style.background = PAGES[i].bg;
+    pageEls[i].style.setProperty('--bg', PAGES[i].bg);
+  }
+
+  function render() {
+    for (var i = 0; i < pageEls.length; i++) {
+      var units = unitsOf(i);
+      var secs = pageEls[i].querySelectorAll('section');
+      for (var j = 0; j < secs.length; j++) {
+        secs[j].querySelector('.value').textContent = fmt(units[j]);
+        secs[j].querySelector('.unit').textContent = LABEL[units[j]];
+      }
+    }
+    var page = PAGES[state.page - 1];
+    track.style.transform = 'translateX(' + (-(state.page - 1) * 100) + 'vw)';
+    document.body.style.backgroundColor = page.bg;
+    document.body.classList.toggle('light', !!page.light);
+    for (var d = 0; d < dots.length; d++) dots[d].classList.toggle('on', d === state.page - 1);
+    var theme = document.querySelector('meta[name="theme-color"]');
+    if (theme) theme.setAttribute('content', page.bg);
+  }
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  // dir: +1 = Zahl größer, -1 = Zahl kleiner. Krumme Werte rasten auf das nächste Raster ein.
+  function change(unit, dir) {
+    var step = STEP[unit];
+    var x = exact(unit) / step;
+    var next = (dir > 0 ? Math.floor(x + 1e-9) + 1 : Math.ceil(x - 1e-9) - 1) * step;
+    next = Math.min(LIMITS[unit][1], Math.max(LIMITS[unit][0], next));
+    state.unit = unit;
+    state.v = next;
+    render(); save();
+  }
+  function setPage(p) {
+    p = Math.min(PAGES.length, Math.max(1, p));
+    if (p === state.page) return;
+    state.page = p;
+    render(); save();
+  }
+  function swapPage(i) {
+    if (!PAGES[i].edit) return;
+    state.swap[i] = !state.swap[i];
+    render(); save();
+  }
+  // Größe in der oberen bzw. unteren Hälfte der aktuellen Seite, null auf der Übersicht
+  function unitAt(top) {
+    var i = state.page - 1;
+    if (!PAGES[i].edit) return null;
+    return unitsOf(i)[top ? 0 : 1];
+  }
+
+  // Tausch-Knöpfe: Seiten 1 bis 3 tauschen oben und unten,
+  // Seite 4 tauscht die beiden Felder, zwischen denen der Punkt liegt.
+  for (var b = 0; b < pageEls.length; b++) {
+    (function (idx) {
+      var btns = pageEls[idx].querySelectorAll('.swap');
+      for (var n = 0; n < btns.length; n++) {
+        (function (btn) {
+          btn.addEventListener('click', function () {
+            if (idx !== GRID) { swapPage(idx); return; }
+            var a = +btn.getAttribute('data-a'), c = +btn.getAttribute('data-b');
+            var tmp = state.grid[a];
+            state.grid[a] = state.grid[c];
+            state.grid[c] = tmp;
+            render(); save();
+          });
+        })(btns[n]);
+      }
+    })(b);
+  }
+
+  // Horizontal: Seite wechseln (Wisch nach links = nächste Seite, nach rechts = vorige).
+  // Vertikal: hoch = Zahl größer, runter = Zahl kleiner, getrennt für obere und untere Hälfte.
+  var startX = null, startY = null, startTop = true;
+  document.addEventListener('touchstart', function (e) {
+    if (e.touches.length !== 1) { startX = null; return; }
+    var t = e.touches[0];
+    startX = t.clientX;
+    startY = t.clientY;
+    var first = pageEls[0].querySelector('section');
+    startTop = t.clientY < first.getBoundingClientRect().bottom;
+    requestWakeLock();
+  }, { passive: true });
+  document.addEventListener('touchmove', function (e) { e.preventDefault(); }, { passive: false });
+  document.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - startX, dy = t.clientY - startY;
+    startX = null;
+    var ax = Math.abs(dx), ay = Math.abs(dy);
+    if (Math.max(ax, ay) < SWIPE_PX) return;
+    if (ax > ay) { setPage(state.page + (dx < 0 ? 1 : -1)); return; }
+    var unit = unitAt(startTop);
+    if (unit) change(unit, dy < 0 ? 1 : -1);
+  });
+  document.addEventListener('touchcancel', function () { startX = null; });
+
+  // Desktop: Pfeil links/rechts wechselt die Seite, hoch/runter ändert die untere Zahl, mit Shift die obere
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') setPage(state.page - 1);
+    else if (e.key === 'ArrowRight') setPage(state.page + 1);
+    else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+      var unit = unitAt(e.shiftKey);
+      if (unit) change(unit, e.key === 'ArrowUp' ? 1 : -1);
+    }
+  });
+
+  // Bildschirm wach halten, soweit der Browser es erlaubt
+  var lock = null;
+  function requestWakeLock() {
+    if (lock || !('wakeLock' in navigator)) return;
+    try {
+      navigator.wakeLock.request('screen').then(function (l) {
+        lock = l;
+        l.addEventListener('release', function () { lock = null; });
+      }).catch(function () {});
+    } catch (e) {}
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') requestWakeLock();
+  });
+  requestWakeLock();
+
+  render();
+})();
+</script>
+<script>
+// Offline-Cache: Service Worker registrieren (braucht https oder localhost)
+// und die Seite unter ihrer tatsächlichen Adresse ablegen, auch wenn die Datei umbenannt wurde.
+(function () {
+  if (!('serviceWorker' in navigator)) return;
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').then(function () {
+      if (!('caches' in window)) return;
+      return caches.open('pace-anzeige-v1').then(function (cache) {
+        return cache.add(location.href.split('#')[0]);
+      });
+    }).catch(function () {});
+  });
+})();
+</script>
+</body>
+</html>
